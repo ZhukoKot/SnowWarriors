@@ -1,11 +1,10 @@
-import ui.Scene;
+import ui.Window;
 
 /**
  * Главный класс приложения в нем прописана ф-ия
  * для запуска приложения
  * @author Балун Владимир
  */
-
 public class Main {
 
     /**
@@ -14,8 +13,8 @@ public class Main {
     public static void main(String[] arg) {
 
         //Создаем окно и вызываем метод вывода его на экран
-        Scene scene = new Scene("Снежные войны", 1000, 600);
-        scene.showScene();
+        Window window = new Window("Снежные войны", 1000, 600);
+        window.showScene();
 
     }
 
