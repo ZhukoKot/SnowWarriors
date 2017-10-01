@@ -14,17 +14,22 @@ public class KeyInputHandler extends KeyAdapter{
      * Флаги обозначающие была ли нажата кнопка на клавиатуре
      * @variable leftPressed - клавиша LEFT
      * @variable rightPressed - клавиша RIGHT
+     * @variable upPressed - клавиша UP
      */
     private boolean leftPressed;
     private boolean rightPressed;
+    private boolean upPressed;
+    private boolean spacePressed;
 
     /**
-     * Конструктор класса, инициализируем флаги, в ненажаток
+     * Конструктор класса, инициализируем флаги, в ненажатое
      * состояние
      */
     public KeyInputHandler() {
         this.leftPressed = false;
         this.rightPressed = false;
+        this.upPressed = false;
+        this.spacePressed = false;
     }
 
     /**
@@ -39,6 +44,14 @@ public class KeyInputHandler extends KeyAdapter{
 
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             rightPressed = true;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+            upPressed = true;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+            spacePressed = true;
         }
 
     }
@@ -57,6 +70,14 @@ public class KeyInputHandler extends KeyAdapter{
             rightPressed = false;
         }
 
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+            upPressed = false;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+            spacePressed = false;
+        }
+
     }
 
     /**
@@ -68,4 +89,11 @@ public class KeyInputHandler extends KeyAdapter{
     public boolean isRightPressed() {
         return rightPressed;
     }
+    public boolean isUpPressed() {
+        return upPressed;
+    }
+    public boolean isSpacePressed() {
+        return spacePressed;
+    }
+
 }

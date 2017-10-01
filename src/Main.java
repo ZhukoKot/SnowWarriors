@@ -14,7 +14,7 @@ public class Main {
 
         //Создаем окно и вызываем метод вывода его на экран
         Window window = new Window("Снежные войны", 1000, 600);
-        window.showScene();
+        window.showWindow();
 
     }
 
