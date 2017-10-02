@@ -14,12 +14,12 @@ abstract class Person {
     /**
      * Переменные абстрактного класса описывающие свойства
      * @variable health - здоровье персонажа
-     * @variable potency - мощь персноажа(сколько жизней будет отниматься от выстрела)
+     * @variable power - мощь персноажа(сколько жизней будет отниматься от выстрела)
      * @variable positionX - позиция персонажа по Х
      * @variable positionY -  позиция персонажа по Y
      */
     private int health;
-    private int potency;
+    private int power;
     private int positionX;
     private int positionY;
 
@@ -27,13 +27,13 @@ abstract class Person {
      * Конструктор класса задающий здоровье и мощь классам, которые
      * наследуют этот класс
      * @param health - здоровье персонажа
-     * @param potency - мощь персонажа(сколько жизней будет отниматься от выстрела)
+     * @param power - мощь персонажа(сколько жизней будет отниматься от выстрела)
      * @param X - позиция по Х
      * @param Y - позиция по Y
      */
-    public Person(int health, int potency, int X, int Y) {
+    public Person(int health, int power, int X, int Y) {
         this.health = health;
-        this.potency = potency;
+        this.power = power;
         this.positionX = X;
         this.positionY = Y;
     }
@@ -48,11 +48,11 @@ abstract class Person {
     public void setHealth(int health) {
         this.health = health;
     }
-    public int getPotency() {
-        return potency;
+    public int getPower() {
+        return power;
     }
-    public void setPotency(int potency) {
-        this.potency = potency;
+    public void setPower(int power) {
+        this.power = power;
     }
     public int getPositionX() {
         return positionX;

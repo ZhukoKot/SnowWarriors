@@ -1,5 +1,6 @@
 package ui;
 
+import persons.Enemy;
 import persons.Player;
 import physics.KeyInputHandler;
 
@@ -43,6 +44,7 @@ public class Scene extends Canvas implements Runnable{
     private boolean isRunning;
     private static Player player;
     private KeyInputHandler handler;
+    private Enemy enemy;
     Image backgroundImg;
     Image countGiftsImg;
     /**
@@ -80,6 +82,7 @@ public class Scene extends Canvas implements Runnable{
         player = new Player(3,10,0, "src/res/person.png",30,500);
         backgroundImg = new ImageIcon("src/res/background.jpg").getImage();
         countGiftsImg = new ImageIcon("src/res/count_gifts.png").getImage();
+        enemy = new Enemy (150,10,"src/res/Enemy_1.png",700,480);
 
         //Добавляем слушателя событий по нажатию на кнопку
         handler = new KeyInputHandler();
@@ -109,6 +112,7 @@ public class Scene extends Canvas implements Runnable{
         graphics.drawString("0",900,50);
         graphics.drawImage(countGiftsImg,920,10,65,65,null);
 
+        enemy.draw (graphics);
         player.draw(graphics);
         graphics.dispose();
         bufferStrategy.show();

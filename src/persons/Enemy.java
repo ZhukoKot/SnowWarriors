@@ -5,57 +5,45 @@ import java.awt.*;
 
 /**
  * Класс реализует интерфейс Person, а именно реализовывает
- * перемещение игрока, стрельбу, задает здоровье, мощь и
+ * перемещение противника, стрельбу, задает здоровье, мощь и
  * устанавливает количество собранных им предметов
- * @author Балун Владимир
+ * @author Жуков Юрий
  */
-public class Player extends Person {
+
+public class Enemy extends Person {
 
     /**
-     * @variable coins - количество собранных предметов игроком
-     * @variable image - изображение игрока
+     * @variable image - изображение противника
      */
-    private int coins;
     private Image image;
-
     /**
      * Конструктор задающий первоначальные данные об игроке, а
      * именно его здоровье, мощь и количество собранных предметов,
      * путь к его картинке
-     * @param health - здоровье игрока
+     * @param health - здоровье противника
      * @param power - мощь игрока
-     * @param coins - количество собранных предметов игрока
      * @param imagePath - путь к картинке игрока
      * @param X - позиция игрока по X
      * @param Y - позиция игрока по Y
      * @throw IOException - обрабатываем исключение, на случай не правильного пути картинки
      */
-    public Player(int health, int power, int coins, String imagePath, int X, int Y){
+    public Enemy (int health, int power, String imagePath, int X, int Y){
         super(health, power, X, Y);
         this.image = new ImageIcon(imagePath).getImage();
     }
-
     /**
-     * Getters and Setters возвращающие и устанавливающие
-     * количество собранных предметов, также возвращающие и
-     * устанавливающие картинку игрока
+     * Getters and Setters  возвращающие и
+     * устанавливающие картинку противника
      */
-    public int getCoins(){
-        return coins;
-    }
-    public void setCoins(int value){
-        this.coins = value;
-    }
     public Image getImage(){
         return image;
     }
     public void setImage(String imagePath){
         this.image = new ImageIcon(imagePath).getImage();
     }
-
     /**
      * Переопределение метода абстрактного класса Person о
-     * отрисовки игрока в окне приложения
+     * отрисовки противника в окне приложения
      * @param graphic - задаем канвас на котором будет происходить отрисовка
      */
     @Override
@@ -64,10 +52,6 @@ public class Player extends Person {
         graphic.drawImage(image, getPositionX(), getPositionY(),null);
     }
 
-    /**
-     * Переопределение метода абстрактного класса Person по
-     * перемещению персонажа
-     */
     @Override
     public void move() {
 
@@ -75,11 +59,10 @@ public class Player extends Person {
 
     /**
      * Переопределение метода абстрактного класса Person по
-     * стерльбе игрока
+     * стерльбе противника
      */
     @Override
     public void shoot() {
 
     }
-
 }
